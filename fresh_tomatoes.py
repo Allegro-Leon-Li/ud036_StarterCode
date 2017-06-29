@@ -1,6 +1,7 @@
 import webbrowser
 import os
 import re
+import media
 
 
 # Styles and scripting for the page
@@ -165,3 +166,22 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
+
+# initialize some Movie objects
+# create movie Fight Club
+fight_club = media.Movie("Fight Club", "https://images-na.ssl-images-amazon.com/images/M/MV5BZGY5Y2RjMmItNDg5Yy00NjUwLThjMTEtNDc2OGUzNTBiYmM1XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                         "https://www.youtube.com/watch?v=BdJKm16Co6M")
+
+# create movie Pulp Fiction
+pulp_fiction = media.Movie("Pulp Fiction", "https://images-na.ssl-images-amazon.com/images/I/51SKHxkZCNL._SY445_.jpg",
+                           "https://www.youtube.com/watch?v=s7EdQ4FqbhY")
+# create movie 1900
+tl1900 = media.Movie("The Legend of 1900", "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA3MTcxNjE0NzNeQTJeQWpwZ15BbWU4MDc3NjUxNDAx._V1_.jpg",
+                     "https://www.youtube.com/watch?v=uGyH6Tt6qwY")
+
+
+# run the script and build the website
+movies = [fight_club, pulp_fiction, tl1900]
+open_movies_page(movies)
+
